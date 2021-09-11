@@ -3,7 +3,8 @@ from dotenv import load_dotenv
 from os import path,environ
 
 
-
+PROJECT_NAME = "Student Content Management System"
+AUTHOR = "Abhijith Ganesh"
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 dotenv_path = path.join(path.dirname(__file__), '.env') 
@@ -58,7 +59,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'StudentCMS.asgi.application'
+WSGI_APPLICATION = 'StudentCMS.wsgi.app'
 
 
 
@@ -93,8 +94,5 @@ TIME_ZONE = 'Asia/Calcutta'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-
-
 STATIC_URL = '/static/'
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATIC_ROOT = path.join(BASE_DIR, 'staticfiles')
