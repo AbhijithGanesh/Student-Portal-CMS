@@ -10,6 +10,8 @@ __pycache__/
 node_modules
 StudentCMS/settings_config
 static
+cockroach
+certs
 
 # Distribution / packaging
 .Python
