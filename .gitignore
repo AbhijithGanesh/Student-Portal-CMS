@@ -9,7 +9,6 @@ __pycache__/
 #TS and React files
 node_modules
 StudentCMS/settings_config
-static
 cockroach
 certs
 
