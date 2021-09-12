@@ -15,8 +15,8 @@ load_dotenv(dotenv_path)
 
 
 SECRET_KEY = environ.get('SECURITY_KEY')
-# DEBUG = environ.get('DEBUG')
-DEBUG = True
+DEBUG = environ.get('DEBUG')
+# DEBUG = True
 ALLOWED_HOSTS = environ.get('ALLOWED_HOSTS').split(',')
 
 
