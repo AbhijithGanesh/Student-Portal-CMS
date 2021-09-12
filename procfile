@@ -1,0 +1,4 @@
+python-3.9.5
+python manage.py makemigrations && python manage.py migrate
+python manage.py collectstatic --no-input
+web: gunicorn TestingProject.asgi:app -w 4 -k uvicorn.workers.UvicornWorker 
