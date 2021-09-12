@@ -5,16 +5,18 @@ from os import path,environ
 
 PROJECT_NAME = "Student Content Management System"
 AUTHOR = "Abhijith Ganesh"
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-dotenv_path = path.join(path.dirname(__file__), '.env') 
+dotenv_path = path.join(BASE_DIR, 'StudentCMS\.env') 
 load_dotenv(dotenv_path)
 
 
 
 
 SECRET_KEY = environ.get('SECURITY_KEY')
-DEBUG = environ.get('DEBUG')
+# DEBUG = environ.get('DEBUG')
+DEBUG = True
 ALLOWED_HOSTS = environ.get('ALLOWED_HOSTS').split(',')
 
 
@@ -59,7 +61,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'StudentCMS.wsgi.app'
+ASGI_APPLICATION = 'StudentCMS.wsgi.app'
 
 
 
@@ -94,5 +96,6 @@ TIME_ZONE = 'Asia/Calcutta'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+
 STATIC_URL = '/static/'
-STATIC_ROOT = path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = path.join(BASE_DIR, 'static')
