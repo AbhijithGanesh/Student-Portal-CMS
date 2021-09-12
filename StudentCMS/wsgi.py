@@ -29,6 +29,13 @@ def get_application():
     app.include_router(LoginRouter, prefix="/security")
     app.mount("/static", app=StaticFiles(directory='static'), name = 'static')
     app.mount("/", WSGIMiddleware(get_wsgi_application()))
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=settings.ALLOWED_HOSTS,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
     return app
 
 app = get_application()
