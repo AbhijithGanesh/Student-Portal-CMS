@@ -15,9 +15,9 @@ load_dotenv(dotenv_path)
 
 
 SECRET_KEY = environ.get('SECURITY_KEY')
-DEBUG = environ.get('DEBUG')
-# DEBUG = True
-ALLOWED_HOSTS = environ.get('ALLOWED_HOSTS').split(',')
+# DEBUG = environ.get('DEBUG')
+DEBUG = False
+ALLOWED_HOSTS = [".herokuapp.com","localhost"]
 
 
 
