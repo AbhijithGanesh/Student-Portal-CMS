@@ -3,4 +3,4 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def LandingPage(request):
-    return render(request, "index.html")
+    return render(request, "frontend/index.html")
