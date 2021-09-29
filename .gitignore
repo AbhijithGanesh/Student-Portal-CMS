@@ -5,11 +5,11 @@ __pycache__/
 
 # C extensions
 *.so
+static/admin
 
 #TS and React files
 node_modules
 StudentCMS/settings_config
-static
 cockroach
 certs
 
