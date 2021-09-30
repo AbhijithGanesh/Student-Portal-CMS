@@ -3,8 +3,7 @@ from django.urls import path, include
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',include("frontend.urls")),
+    path("admin/", admin.site.urls),
+    path("", include("frontend.urls")),
     path("backend/", include("CMSLogic.urls")),
-
 ]
