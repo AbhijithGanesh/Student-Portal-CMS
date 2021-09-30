@@ -30,19 +30,21 @@ class StudentProfile(models.Model):
     Country = models.CharField(max_length=75, choices=_choices)
     ContactNumber = models.BigIntegerField()
 
+
 class ContactUs(models.Model):
     Department_Name = models.CharField(max_length=300)
     Department_Head = models.CharField(max_length=300)
     Department_ContactDetails = models.IntegerField()
 
     class Meta:
-       verbose_name_plural = "Contact Us"
-    
+        verbose_name_plural = "Contact Us"
+
+
 class Events(models.Model):
-    Event_Name = models.CharField(max_length = 50)
-    Event_Head = models.ForeignKey(StudentProfile, on_delete = models.DO_NOTHING)
+    Event_Name = models.CharField(max_length=50)
+    Event_Head = models.ForeignKey(StudentProfile, on_delete=models.DO_NOTHING)
     Event_Duration = models.DurationField()
-    Event_Descripton = models.TextField(null = False, default = "Empty Description")
+    Event_Descripton = models.TextField(null=False, default="Empty Description")
 
     class Meta:
-       verbose_name_plural = "Events and Notices"
+        verbose_name_plural = "Events and Notices"

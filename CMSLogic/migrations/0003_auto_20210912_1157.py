@@ -6,21 +6,21 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('CMSLogic', '0002_auto_20210912_1154'),
+        ("CMSLogic", "0002_auto_20210912_1154"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='contactus',
-            options={'verbose_name_plural': 'Contact Us'},
+            name="contactus",
+            options={"verbose_name_plural": "Contact Us"},
         ),
         migrations.AlterModelOptions(
-            name='events',
-            options={'verbose_name_plural': 'Events and Notices'},
+            name="events",
+            options={"verbose_name_plural": "Events and Notices"},
         ),
         migrations.AddField(
-            model_name='events',
-            name='Event_Descripton',
-            field=models.TextField(default='Empty Description'),
+            model_name="events",
+            name="Event_Descripton",
+            field=models.TextField(default="Empty Description"),
         ),
     ]

@@ -4,8 +4,7 @@ from django.core.wsgi import get_wsgi_application
 from django.conf import settings
 
 
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'StudentCMS.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "StudentCMS.settings")
 apps.populate(settings.INSTALLED_APPS)
 
 from fastapi import FastAPI
@@ -16,6 +15,7 @@ from starlette.middleware.cors import CORSMiddleware
 from api.routes import student_router as router
 from api.auth_user_router import LoginRouter
 
+
 def get_application():
     """
     routes = [
@@ -24,10 +24,12 @@ def get_application():
     ]
     These routes can be mounted as an array if you compromise on static files
     """
-    app = FastAPI(title = settings.PROJECT_NAME, debug = settings.DEBUG, redoc_url="/inner-docs")
-    app.include_router(router, prefix = "/api")
+    app = FastAPI(
+        title=settings.PROJECT_NAME, debug=settings.DEBUG, redoc_url="/inner-docs"
+    )
+    app.include_router(router, prefix="/api")
     app.include_router(LoginRouter, prefix="/security")
-    app.mount("/static", app=StaticFiles(directory='static'), name = 'static')
+    app.mount("/static", app=StaticFiles(directory="static"), name="static")
     app.mount("/", WSGIMiddleware(get_wsgi_application()))
     app.add_middleware(
         CORSMiddleware,
@@ -37,5 +39,6 @@ def get_application():
         allow_headers=["*"],
     )
     return app
+
 
 app = get_application()
