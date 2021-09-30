@@ -19,8 +19,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
+      env:
+        SUPER_SECRET: ${{ secrets.SECURITY_KEY }}
       with:
-        secret-key: ${{secrets.SECURITY_KEY}}
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
       run: |
