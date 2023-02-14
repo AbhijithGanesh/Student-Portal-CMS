@@ -24,7 +24,7 @@ python-dotenv==0.19.0
 pytz==2021.1
 regex==2021.8.28
 sqlparse==0.4.2
-starlette==0.14.2
+starlette==0.25.0
 tomli==1.2.1
 typing-extensions==3.10.0.2
 uvicorn==0.15.0
